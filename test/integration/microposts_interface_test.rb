@@ -1,4 +1,3 @@
-test/integration/microposts_interface_test.rb
 require "test_helper"
 
 class MicropostsInterface < ActionDispatch::IntegrationTest
