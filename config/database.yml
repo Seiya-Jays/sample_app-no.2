@@ -22,4 +22,4 @@ test:
 
 production:
   <<: *default
-  database: db/production.sqlite3
+  url: <%= ENV['b9eQs3X0W024OP583abdafxGMHnh8o5J'] %>
