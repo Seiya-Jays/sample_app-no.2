@@ -90,4 +90,8 @@ Rails.application.configure do
 
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
+  
+  DB_PASSWORD = 'b9eQs3X0W024OP583abdafxGMHnh8o5J'
+  DATABASE_URL = 'postgres://rails7_sample:b9eQs3X0W024OP583abdafxGMHnh8o5J@dpg-cemqau6n6mpoovjk24cg-a/rails7_sample_staging_773t'
+  RAILS_MASTER_KEY = '5eefb328ccb24d051877a27c60262b7a'
 end
