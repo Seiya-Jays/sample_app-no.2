@@ -7,11 +7,15 @@
 default: &default
   adapter: sqlite3
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
-  timeout: 5432
+  timeout: 5000
 
 development:
   <<: *default
   database: db/development.sqlite3
+  username: mysite
+  password:
+  host: localhost
+  port: 5432
 
 # Warning: The database defined as "test" will be erased and
 # re-generated from your development database when you run "rake".
@@ -22,7 +26,12 @@ test:
 
 production:
   <<: *default
-  adapter: postgresql
+   adapter: postgresql
   encoding: unicode
-  pool: 5
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+  database: rails7_sample_staging_773t
+  username: rails7_sample
+      port: 5432
+  password: <%= ENV['b9eQs3X0W024OP583abdafxGMHnh8o5J'] %>
   url: <%= ENV['postgres://rails7_sample:b9eQs3X0W024OP583abdafxGMHnh8o5J@dpg-cemqau6n6mpoovjk24cg-a/rails7_sample_staging_773t'] %>
+
