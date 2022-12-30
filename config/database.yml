@@ -12,8 +12,6 @@ default: &default
 development:
   <<: *default
   database: db/development.sqlite3
-  username: mysite
-  password:
   host: localhost
   port: 5432
 
