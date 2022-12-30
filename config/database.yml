@@ -22,4 +22,7 @@ test:
 
 production:
   <<: *default
+  adapter: postgresql
+  encoding: unicode
+  pool: 5
   url: <%= ENV['postgres://rails7_sample:b9eQs3X0W024OP583abdafxGMHnh8o5J@dpg-cemqau6n6mpoovjk24cg-a/rails7_sample_staging_773t'] %>
