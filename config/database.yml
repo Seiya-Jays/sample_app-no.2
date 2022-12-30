@@ -1,36 +1,14 @@
-# SQLite. Versions 3.8.0 and up are supported.
-#   gem install sqlite3
-#
-#   Ensure the SQLite 3 gem is defined in your Gemfile
-#   gem "sqlite3"
-#
 default: &default
-  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
-  timeout: 5000
-
+  adapter: postgresql
+  encoding: unicode
+  pool: 5
+  # 以下、3行追加
+  username: <username> # 設定したPostgreSQL Accountと同一のもの
+  password: <password> # 設定したPostgreSQL Accountと同一のもの
+  host: localhost
 development:
   <<: *default
-  adapter: sqlite3
-  database: db/development.sqlite3
-  host: localhost
-  port: 5432
-
-# Warning: The database defined as "test" will be erased and
-# re-generated from your development database when you run "rake".
-# Do not set this db to the same as development or production.
+  database: appname_development # appnameのところは、rails new時のappnameになっているはずです。
 test:
   <<: *default
-  adapter: sqlite3
-  database: db/test.sqlite3
-
-production:
-  <<: *default
-   adapter: postgresql
-  encoding: unicode
-  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
-  database: rails7_sample_staging_773t
-  username: rails7_sample
-      port: 5432
-  password: <%= ENV['b9eQs3X0W024OP583abdafxGMHnh8o5J'] %>
-  url: <%= ENV['postgres://rails7_sample:b9eQs3X0W024OP583abdafxGMHnh8o5J@dpg-cemqau6n6mpoovjk24cg-a/rails7_sample_staging_773t'] %>
-
+  database: appname_test # appnameのところは、rails new時のappnameになっているはずです。
