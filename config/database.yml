@@ -3,8 +3,8 @@ default: &default
   encoding: unicode
   pool: 5
   # 以下、3行追加
-  username: <username> # 設定したPostgreSQL Accountと同一のもの
-  password: <password> # 設定したPostgreSQL Accountと同一のもの
+  username: rails7_sample  # 設定したPostgreSQL Accountと同一のもの
+  password: b9eQs3X0W024OP583abdafxGMHnh8o5J # 設定したPostgreSQL Accountと同一のもの
   host: localhost
 development:
   <<: *default
